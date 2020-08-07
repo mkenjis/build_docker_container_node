@@ -1,0 +1,20 @@
+pipeline {
+    agent {
+        dockerfile true
+    }
+    stages {
+        stage('Test3') {
+            steps {
+                sh 'python --version'
+                sh 'echo Building using Docker container !!!'
+                sh 'python test.py'
+            }
+        }
+        stage('Run') {
+            steps {
+                sh 'echo Running Docker container !!!!'
+                sh 'python app.py'
+            }
+        }
+    }
+}

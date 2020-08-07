@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        dockerfile true
+        docker { image 'mkenjis/mynode_img' }
     }
     stages {
         stage('Test3') {

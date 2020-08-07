@@ -5,15 +5,16 @@ pipeline {
     stages {
         stage('Test3') {
             steps {
-                sh 'python --version'
-                sh 'echo Building using Docker container !!!'
-                sh 'python test.py'
+                sh 'node --version'
+                sh 'echo Testing using Docker container !!!'
+                sh 'cd test'
+				sh 'npm test'
             }
         }
         stage('Run') {
             steps {
                 sh 'echo Running Docker container !!!!'
-                sh 'python app.py'
+                sh 'node --version'
             }
         }
     }

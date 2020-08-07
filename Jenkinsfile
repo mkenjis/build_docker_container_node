@@ -1,19 +1,10 @@
 pipeline {
     agent {
-        dockerfile true
+        docker { image 'mkenjis/mynode_img' }
     }
     stages {
-        stage('Test3') {
+        stage('Test') {
             steps {
-                sh 'node --version'
-                sh 'echo Testing using Docker container !!!'
-                sh 'cd test'
-				sh 'npm test'
-            }
-        }
-        stage('Run') {
-            steps {
-                sh 'echo Running Docker container !!!!'
                 sh 'node --version'
             }
         }

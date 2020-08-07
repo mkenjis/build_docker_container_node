@@ -6,7 +6,7 @@ pipeline {
         stage('Test3') {
             steps {
                 sh 'node --version'
-                sh 'echo Testing using Docker container !!!!!!!!'
+                sh 'echo Testing using Docker container !!!!!!!!!!'
                 sh 'cd test'
 				sh 'npm test'
             }

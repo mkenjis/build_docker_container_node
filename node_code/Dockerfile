@@ -8,5 +8,5 @@ COPY package.json .
 
 RUN mkdir test
 WORKDIR test
-COPY helloworld_test.js .
+COPY test/helloworld_test.js .
 RUN npm test

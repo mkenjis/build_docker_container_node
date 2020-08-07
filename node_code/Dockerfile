@@ -1,8 +1,5 @@
 FROM mkenjis/mynode_img
 
-RUN mkdir stuff
-WORKDIR stuff
-
 COPY helloworld.js .
 COPY package.json .
 

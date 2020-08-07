@@ -5,6 +5,9 @@ RUN apt-get update \
  && apt-get install -y npm \
  && apt-get install -y nodejs
 
+RUN mkdir stuff
+WORKDIR stuff
+
 RUN npm init --yes
 RUN npm install mocha@2.5.3 --save-dev
 RUN npm install zombie --save-dev

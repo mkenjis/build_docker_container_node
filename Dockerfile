@@ -1,9 +1,13 @@
-FROM mkenjis/mynode_img
+FROM ubuntu
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update \
+ && apt-get install -y tzdata \
+ && apt-get install -y npm \
+ && apt-get install -y nodejs
 
-COPY helloworld.js .
-COPY package.json .
+RUN mkdir stuff
+WORKDIR stuff
 
-RUN mkdir test
-WORKDIR test
-COPY test/helloworld_test.js .
-RUN npm test
+RUN npm init --yes
+RUN npm install mocha@2.5.3 --save-dev
+RUN npm install zombie --save-dev
